@@ -1,39 +1,116 @@
-body.superman-theme {
-  background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 100%);
-  color: white;
-  font-family: Arial, sans-serif;
+/* General Body Styles */
+body {
+    background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+    font-family: 'Arial', sans-serif;
 }
 
-#chat-box {
-  height: 400px;
-  overflow-y: auto;
-  background: rgba(255, 255, 255, 0.1);
+.chat-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0046a5;
+    text-shadow: 1px 1px #ccc;
 }
 
-.message {
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease-in-out;
+.chat-subtitle {
+    font-size: 1.2rem;
+    color: #555;
 }
 
-.message.bot {
-  text-align: left;
+/* Chat Container */
+.chat-container {
+    background-color: #fff;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-.message.user {
-  text-align: right;
+.chat-box {
+    height: 420px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
+/* Chat Bubbles */
+.message-wrapper {
+    display: flex;
+    margin: 10px 0;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bot-message .message,
+.user-message .message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.bot-message {
+    flex-direction: row;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.bot-message .message {
+    background-color: #e3f2fd;
+    color: #0046a5;
+}
+
+.user-message .message {
+    background-color: #0046a5;
+    color: #fff;
+}
+
+/* Timestamps */
 .timestamp {
-  font-size: 0.8rem;
-  color: #ccc;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+    display: block;
 }
 
-.fade-in {
-  transform: translateY(-20px);
-  opacity: 0;
+/* Avatar Styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
 }
 
-.fade-in.show {
-  transform: translateY(0);
-  opacity: 1;
+.bot-message .avatar {
+    background-color: #0046a5;
+}
+
+.user-message .avatar {
+    background-color: #555;
+}
+
+/* Typing Animation */
+.typing-animation {
+    background: linear-gradient(90deg, #0046a5 25%, #e3f2fd 50%, #0046a5 75%);
+    background-size: 200% 100%;
+    animation: typing 1s infinite;
+    color: transparent;
+    height: 20px;
+    width: 80px;
+    border-radius: 10px;
+}
+
+@keyframes typing {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
 }
