@@ -22,18 +22,28 @@ async function sendMessage() {
   createMessageElement(userMessage, "user");
   userInput.value = "";
 
-  // Placeholder while fetching response
+  // Placeholder for bot response
   const placeholder = createMessageElement("Fetching response...", "bot");
 
   try {
     const response = await axios.post("/api/chat", { prompt: userMessage });
-    placeholder.innerHTML = `
-      <p>${response.data.response}</p>
-      <span class="timestamp">${new Date().toLocaleTimeString()}</span>
-    `;
+    if (response.data && response.data.response) {
+      // Update placeholder with API response
+      placeholder.innerHTML = `
+        <p>${response.data.response}</p>
+        <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+      `;
+    } else {
+      // Handle unexpected API response
+      placeholder.innerHTML = `
+        <p>Unexpected response from the server.</p>
+        <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+      `;
+    }
   } catch (error) {
+    console.error("Error fetching API response:", error);
     placeholder.innerHTML = `
-      <p>Error fetching response. Try again later.</p>
+      <p>Error fetching response. Please try again later.</p>
       <span class="timestamp">${new Date().toLocaleTimeString()}</span>
     `;
   }
