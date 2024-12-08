@@ -30,9 +30,9 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl);
   });
 
-  createServer(server).listen(3000, (err) => {
+  createServer(server).listen(10000, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
+    console.log('> Ready on http://localhost:10000');
   });
 });
 
