@@ -1,0 +1,32 @@
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.animate-fly {
+  animation: fly 2s ease-in-out infinite;
+}
+
+@keyframes cape-flutter {
+  0% {
+    transform: skew(0deg);
+  }
+  50% {
+    transform: skew(-5deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+.animate-cape {
+  animation: cape-flutter 3s ease-in-out infinite;
+}
+
