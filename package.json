@@ -2,10 +2,10 @@
   "name": "sonnet-chatbot",
   "version": "1.0.0",
   "description": "A Superman-themed AI chatbot called Sonnet",
+  "type": "module",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "type": "module",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
