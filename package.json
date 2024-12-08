@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "type": "module",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
