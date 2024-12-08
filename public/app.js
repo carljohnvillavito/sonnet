@@ -26,7 +26,7 @@ async function sendMessage() {
   const placeholder = createMessageElement("Fetching response...", "bot");
 
   try {
-    const response = await axios.get(`https://kaiz-apis.gleeze.com/api/claude-sonnet-3.5?q=${userMessage}&uid=08062005`);
+    const response = await axios.post("/api/chat", { prompt: userMessage });
     placeholder.innerHTML = `
       <p>${response.data.response}</p>
       <span class="timestamp">${new Date().toLocaleTimeString()}</span>
