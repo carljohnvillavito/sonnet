@@ -1,0 +1,39 @@
+body.superman-theme {
+  background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 100%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#chat-box {
+  height: 400px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.message {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.message.bot {
+  text-align: left;
+}
+
+.message.user {
+  text-align: right;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.fade-in {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.fade-in.show {
+  transform: translateY(0);
+  opacity: 1;
+}
